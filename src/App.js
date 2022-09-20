@@ -4,7 +4,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Instructors from "./pages/Instructors";
 import NotFound from "./pages/NotFound";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import InstructorDetail from "./pages/InstructorDetail";
 import Paths from "./pages/Paths";
 import Aws from "./pages/Aws";
@@ -50,9 +50,9 @@ function App() {
             <Route path='' element={<Contact />} />
           </Route>
 
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-          <Route path='*' element={<NotFound />} />
+          {/* <Route path='*' element={<NotFound />} /> */}
+          {/* //!burada normalde olmayan bir link tıkladığımızda not founda gider ancak biz Navigate ile onu Home a yönlendirdik... */}
+          <Route path='*' element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </BrowserRouter>

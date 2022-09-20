@@ -1,17 +1,10 @@
-import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
+import { Outlet, Navigate } from "react-router-dom";
 
 const PrivateRouter = () => {
-    
+  //? Aslinda bu bilgi Global state'den okunacak
+  const isAuthenticated = false;
 
-    //?Aslında bu bilgi Global State'den okuncak
-const isAuthenticated = false
+  return isAuthenticated ? <Outlet /> : <Navigate to='/' />;
+};
 
-
-
-  return (
-    isAuthenticated ? <Outlet/> : Navigate('/')
-  )
-}
-
-export default PrivateRouter
+export default PrivateRouter;
